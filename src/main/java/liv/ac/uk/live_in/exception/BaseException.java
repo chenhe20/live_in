@@ -1,6 +1,7 @@
 package liv.ac.uk.live_in.exception;
 
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import liv.ac.uk.live_in.Enum.ErrorCodeEnum;
 
 public class BaseException extends RuntimeException{
@@ -23,15 +24,17 @@ public class BaseException extends RuntimeException{
         return code;
     }
 
-    public void setCode(String code) {
+    public BaseException setCode(String code) {
         this.code = code;
+        return this;
     }
 
     public String getDesc() {
         return desc;
     }
 
-    public void setDesc(String desc) {
+    public BaseException setDesc(String desc) {
         this.desc = desc;
+        return this;
     }
 }

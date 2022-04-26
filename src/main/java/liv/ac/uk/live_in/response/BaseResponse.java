@@ -1,9 +1,18 @@
 package liv.ac.uk.live_in.response;
 
+import liv.ac.uk.live_in.Enum.ErrorCodeEnum;
+
 public class BaseResponse <T>{
     private String code;
     private String desc;
     private T data;
+
+    public BaseResponse setSuccess() {
+        BaseResponse baseResponse = new BaseResponse();
+        baseResponse.setCode(ErrorCodeEnum.SUCCESS.getCode());
+        baseResponse.setDesc(ErrorCodeEnum.SUCCESS.getDesc());
+        return baseResponse;
+    }
 
     public String getCode() {
         return code;
@@ -17,15 +26,17 @@ public class BaseResponse <T>{
         return desc;
     }
 
-    public void setDesc(String desc) {
+    public BaseResponse setDesc(String desc) {
         this.desc = desc;
+        return this;
     }
 
     public T getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public BaseResponse setData(T data) {
         this.data = data;
+        return this;
     }
 }

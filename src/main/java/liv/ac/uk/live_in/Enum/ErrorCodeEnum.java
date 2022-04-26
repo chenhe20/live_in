@@ -4,9 +4,10 @@ public enum ErrorCodeEnum {
     SUCCESS("000000", "Success"),
     FAIL("000001", "Fail"),
     SYS_ERROR("SY0001", "System Error"),
-    NO_DATA("BS0001", "Invalid Data"),
-    DB_UPDATE_ERROR("BS0002", "Update Error"),
-    ACCESS_DENY_ERROR("BS003","Unauthorized Access");
+    INVALID_REQUEST("BS0001", "Invalid request data"),
+    NO_DATA("BS0002", "Cannot find Data"),
+    DB_UPDATE_ERROR("BS0003", "Update Error"),
+    ACCESS_DENY_ERROR("BS004","Unauthorized Access");
 
 
     private String code;
