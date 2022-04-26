@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin
 public class LoginController {
 
+
+
     @Autowired
     LoginServiceImpl loginService;
 
