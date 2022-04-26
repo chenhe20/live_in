@@ -3,9 +3,7 @@ package liv.ac.uk.live_in.controller;
 
 import liv.ac.uk.live_in.response.BaseResponse;
 import liv.ac.uk.live_in.service.impl.AccommodationServiceImpl;
-import liv.ac.uk.live_in.service.impl.UserServiceImpl;
 import liv.ac.uk.live_in.vo.AccommodationVO;
-import liv.ac.uk.live_in.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -32,14 +30,21 @@ public class AccommodationController {
 
     @RequestMapping(value = "/query-all", method = RequestMethod.GET)
     @ResponseBody
-    public BaseResponse queryAllAcmd(){
+    public BaseResponse queryAllAcmd() {
         return accommodationService.queryAllAccommodation();
     }
 
     @RequestMapping(value = "/query/{keyword}", method = RequestMethod.GET)
     @ResponseBody
-    public BaseResponse queryAcmdByKeyword(@PathVariable String keyword){
+    public BaseResponse queryAcmdByKeyword(@PathVariable String keyword) {
         return accommodationService.queryAccommodationByKeyWord(keyword);
     }
+
+    @RequestMapping(value = "/query-name/{name}", method = RequestMethod.GET)
+    @ResponseBody
+    public BaseResponse queryAcmdByAcmdName(@PathVariable String name) {
+        return accommodationService.queryAccommodationByAcmdName(name);
+    }
+
 
 }

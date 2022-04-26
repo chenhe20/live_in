@@ -116,7 +116,7 @@ public class LoginServiceImpl implements LoginService {
     }
 
     @Override
-    public BaseResponse<User> updateUsrPwd(UserVO userVO) {
+    public BaseResponse<User> updateUserPwd(UserVO userVO) {
         return null;
     }
 }

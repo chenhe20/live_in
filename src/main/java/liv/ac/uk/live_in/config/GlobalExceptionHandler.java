@@ -3,8 +3,6 @@ package liv.ac.uk.live_in.config;
 import liv.ac.uk.live_in.Enum.ErrorCodeEnum;
 import liv.ac.uk.live_in.exception.BaseException;
 import liv.ac.uk.live_in.response.BaseResponse;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +16,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public BaseResponse defaultExceptionHandler(HttpServletRequest request, Exception e) {
 
-        System.out.println("============" + e.getMessage());
+        System.out.println("======Exception======");
+        e.printStackTrace();
 
         BaseResponse baseResponse = new BaseResponse();
         if (e instanceof BaseException) {

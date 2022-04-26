@@ -1,9 +1,10 @@
 package liv.ac.uk.live_in.dao;
 
+import liv.ac.uk.live_in.page.Page;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import liv.ac.uk.live_in.page.Page;
 
 public class AccommodationExample {
     /**
@@ -224,63 +225,63 @@ public class AccommodationExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andAcmdIdIsNull() {
-            addCriterion("acmd_id is null");
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdIsNotNull() {
-            addCriterion("acmd_id is not null");
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdEqualTo(Integer value) {
-            addCriterion("acmd_id =", value, "acmdId");
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdNotEqualTo(Integer value) {
-            addCriterion("acmd_id <>", value, "acmdId");
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdGreaterThan(Integer value) {
-            addCriterion("acmd_id >", value, "acmdId");
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("acmd_id >=", value, "acmdId");
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdLessThan(Integer value) {
-            addCriterion("acmd_id <", value, "acmdId");
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdLessThanOrEqualTo(Integer value) {
-            addCriterion("acmd_id <=", value, "acmdId");
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdIn(List<Integer> values) {
-            addCriterion("acmd_id in", values, "acmdId");
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdNotIn(List<Integer> values) {
-            addCriterion("acmd_id not in", values, "acmdId");
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdBetween(Integer value1, Integer value2) {
-            addCriterion("acmd_id between", value1, value2, "acmdId");
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andAcmdIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("acmd_id not between", value1, value2, "acmdId");
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
 
@@ -491,6 +492,76 @@ public class AccommodationExample {
 
         public Criteria andLatitudeNotBetween(String value1, String value2) {
             addCriterion("latitude not between", value1, value2, "latitude");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesIsNull() {
+            addCriterion("facilities is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesIsNotNull() {
+            addCriterion("facilities is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesEqualTo(String value) {
+            addCriterion("facilities =", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesNotEqualTo(String value) {
+            addCriterion("facilities <>", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesGreaterThan(String value) {
+            addCriterion("facilities >", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesGreaterThanOrEqualTo(String value) {
+            addCriterion("facilities >=", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesLessThan(String value) {
+            addCriterion("facilities <", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesLessThanOrEqualTo(String value) {
+            addCriterion("facilities <=", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesLike(String value) {
+            addCriterion("facilities like", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesNotLike(String value) {
+            addCriterion("facilities not like", value, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesIn(List<String> values) {
+            addCriterion("facilities in", values, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesNotIn(List<String> values) {
+            addCriterion("facilities not in", values, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesBetween(String value1, String value2) {
+            addCriterion("facilities between", value1, value2, "facilities");
+            return (Criteria) this;
+        }
+
+        public Criteria andFacilitiesNotBetween(String value1, String value2) {
+            addCriterion("facilities not between", value1, value2, "facilities");
             return (Criteria) this;
         }
 

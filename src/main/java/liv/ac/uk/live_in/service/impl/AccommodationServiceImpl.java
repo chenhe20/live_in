@@ -67,4 +67,21 @@ public class AccommodationServiceImpl implements AccommodationService {
         List<Accommodation> accommodations = accommodationMapper.customSelectByKeyword(keyword);
         return new BaseResponse().setData(accommodations).setSuccess();
     }
+
+    @Override
+    public BaseResponse<Accommodation> queryAccommodationByAcmdName(String acmdName) {
+
+        if (acmdName.equals(null)) throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+
+        AccommodationExample accommodationExample = new AccommodationExample();
+        AccommodationExample.Criteria criteria = accommodationExample.createCriteria();
+        criteria.andDeleteStatusEqualTo(false);
+        criteria.andAcmdNameEqualTo(acmdName);
+
+        List<Accommodation> accommodations = accommodationMapper.selectByExample(accommodationExample);
+        if (accommodations.size() == 0) throw new BaseException(ErrorCodeEnum.NO_DATA);
+
+        return new BaseResponse().setData(accommodations.get(0)).setSuccess();
+
+    }
 }
