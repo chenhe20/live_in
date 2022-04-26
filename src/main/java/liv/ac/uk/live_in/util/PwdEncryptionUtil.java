@@ -10,13 +10,13 @@ public class PwdEncryptionUtil {
         return DigestUtils.md5Hex(src);
     }
 
-    public static String beginMd5PassowrdToDB(String password){
+    public static String Md5PWd(String password){
         String str = salt.charAt(0)+salt.charAt(5)+password+salt.charAt(3)+salt.charAt(7)+salt.charAt(10);
         return md5(str);
     }
 
-    public static String ToDB(String password,String salt){
-        String s = beginMd5PassowrdToDB(password);
+    public static String ReMd5PwdToDB(String password, String salt){
+        String s = Md5PWd(password);
         String newPwd = salt.charAt(0)+s+salt.charAt(3);
 
         return md5(newPwd);

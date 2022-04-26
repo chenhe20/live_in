@@ -6,10 +6,15 @@ import liv.ac.uk.live_in.response.BaseResponse;
 import liv.ac.uk.live_in.vo.AccommodationVO;
 import liv.ac.uk.live_in.vo.UserVO;
 
+import java.util.List;
+
 public interface AccommodationService {
 
     public BaseResponse<Accommodation> updateAccommodation(AccommodationVO acmdVO);
     public BaseResponse<Accommodation> deleteAccommodation(AccommodationVO acmdVO);
-    public BaseResponse<Accommodation> queryAccommodation(AccommodationVO acmdVO);
+    public BaseResponse<List<Accommodation>> queryAccommodation(AccommodationVO acmdVO);
+
+    public BaseResponse<List<Accommodation>> queryAllAccommodation();
+    public BaseResponse<List<Accommodation>> queryAccommodationByKeyWord(String keyword);
 
 }

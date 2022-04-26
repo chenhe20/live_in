@@ -30,10 +30,16 @@ public class AccommodationController {
         return accommodationService.deleteAccommodation(acmdVO);
     }
 
-    @RequestMapping(value = "/query", method = RequestMethod.GET)
+    @RequestMapping(value = "/query-all", method = RequestMethod.GET)
     @ResponseBody
-    public BaseResponse queryAcmd(@RequestBody AccommodationVO acmdVO){
-        return accommodationService.queryAccommodation(acmdVO);
+    public BaseResponse queryAllAcmd(){
+        return accommodationService.queryAllAccommodation();
+    }
+
+    @RequestMapping(value = "/query/{keyword}", method = RequestMethod.GET)
+    @ResponseBody
+    public BaseResponse queryAcmdByKeyword(@PathVariable String keyword){
+        return accommodationService.queryAccommodationByKeyWord(keyword);
     }
 
 }

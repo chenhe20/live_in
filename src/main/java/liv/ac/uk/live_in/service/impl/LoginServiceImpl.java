@@ -45,7 +45,7 @@ public class LoginServiceImpl implements LoginService {
 
         // Compares passwords
         User dbUser = users.get(0);
-        if (PwdEncryptionUtil.ToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
+        if (PwdEncryptionUtil.ReMd5PwdToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
             return new BaseResponse<User>().setData(dbUser).setSuccess();
         } else throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
     }
@@ -71,7 +71,7 @@ public class LoginServiceImpl implements LoginService {
 
         // Compares passwords
         User dbUser = users.get(0);
-        if (PwdEncryptionUtil.ToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
+        if (PwdEncryptionUtil.ReMd5PwdToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
             baseResponse.setSuccess();
             baseResponse.setData(dbUser);
 
@@ -97,9 +97,11 @@ public class LoginServiceImpl implements LoginService {
         List<User> users = userMapper.selectByExample(userExample);
         if (users.size() != 0) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("The username " + username + " has been used");
 
+        // TODO: Checks password format
+
         // Encrypts the password
         String uuid = UUID.randomUUID().toString();
-        String password = PwdEncryptionUtil.ToDB(userVO.getPassword(),uuid);
+        String password = PwdEncryptionUtil.ReMd5PwdToDB(userVO.getPassword(),uuid);
 
         // Creates the user object
         User user = new User();

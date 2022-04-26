@@ -119,4 +119,8 @@ public interface AccommodationMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Accommodation record);
+
+    List<Accommodation> customSelectByKeyword(@Param("keyword") String keyword);
+
+
 }

@@ -813,6 +813,146 @@ public class RoomExample {
             addCriterion("image_url not between", value1, value2, "imageUrl");
             return (Criteria) this;
         }
+
+        public Criteria andTenancyIsNull() {
+            addCriterion("tenancy is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyIsNotNull() {
+            addCriterion("tenancy is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyEqualTo(String value) {
+            addCriterion("tenancy =", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyNotEqualTo(String value) {
+            addCriterion("tenancy <>", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyGreaterThan(String value) {
+            addCriterion("tenancy >", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyGreaterThanOrEqualTo(String value) {
+            addCriterion("tenancy >=", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyLessThan(String value) {
+            addCriterion("tenancy <", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyLessThanOrEqualTo(String value) {
+            addCriterion("tenancy <=", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyLike(String value) {
+            addCriterion("tenancy like", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyNotLike(String value) {
+            addCriterion("tenancy not like", value, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyIn(List<String> values) {
+            addCriterion("tenancy in", values, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyNotIn(List<String> values) {
+            addCriterion("tenancy not in", values, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyBetween(String value1, String value2) {
+            addCriterion("tenancy between", value1, value2, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andTenancyNotBetween(String value1, String value2) {
+            addCriterion("tenancy not between", value1, value2, "tenancy");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlIsNull() {
+            addCriterion("info_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlIsNotNull() {
+            addCriterion("info_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlEqualTo(String value) {
+            addCriterion("info_url =", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlNotEqualTo(String value) {
+            addCriterion("info_url <>", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlGreaterThan(String value) {
+            addCriterion("info_url >", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("info_url >=", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlLessThan(String value) {
+            addCriterion("info_url <", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlLessThanOrEqualTo(String value) {
+            addCriterion("info_url <=", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlLike(String value) {
+            addCriterion("info_url like", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlNotLike(String value) {
+            addCriterion("info_url not like", value, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlIn(List<String> values) {
+            addCriterion("info_url in", values, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlNotIn(List<String> values) {
+            addCriterion("info_url not in", values, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlBetween(String value1, String value2) {
+            addCriterion("info_url between", value1, value2, "infoUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andInfoUrlNotBetween(String value1, String value2) {
+            addCriterion("info_url not between", value1, value2, "infoUrl");
+            return (Criteria) this;
+        }
     }
 
     /**
