@@ -3,7 +3,7 @@ package liv.ac.uk.live_in.dao;
 import java.util.Date;
 
 /**
- * room dao object
+ * roomdao object
  * 
  **/
 public class Room {

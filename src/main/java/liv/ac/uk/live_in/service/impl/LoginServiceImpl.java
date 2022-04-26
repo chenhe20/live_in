@@ -41,14 +41,13 @@ public class LoginServiceImpl implements LoginService {
         List<User> users = userMapper.selectByExample(userExample);
 
         // If there is no such username in the database
-        if (users == null) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
+        if (users.size() == 0) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
 
         // Compares passwords
         User dbUser = users.get(0);
-        if (PwdEncryptionUtil.ToDB(password,dbUser.getSalt()).equals(dbUser.getPassword()))
-            return new BaseResponse().setData(dbUser).setSuccess();
-
-        else throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
+        if (PwdEncryptionUtil.ToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
+            return new BaseResponse<User>().setData(dbUser).setSuccess();
+        } else throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
     }
 
     @Override
@@ -96,7 +95,7 @@ public class LoginServiceImpl implements LoginService {
         criteria.andUsernameEqualTo(username);
         criteria.andDeleteStatusEqualTo(false);
         List<User> users = userMapper.selectByExample(userExample);
-        if (users != null) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("The username " + username + " has been used");
+        if (users.size() != 0) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("The username " + username + " has been used");
 
         // Encrypts the password
         String uuid = UUID.randomUUID().toString();
@@ -107,10 +106,15 @@ public class LoginServiceImpl implements LoginService {
         BeanUtils.copyProperties(userVO, user);
         user.setSalt(uuid);
         user.setPassword(password);
-        userMapper.insert(user);
+        userMapper.insertSelective(user);
 
         BaseResponse baseResponse = new BaseResponse();
         baseResponse.setData(user);
         return baseResponse.setSuccess();
+    }
+
+    @Override
+    public BaseResponse<User> updateUsrPwd(UserVO userVO) {
+        return null;
     }
 }

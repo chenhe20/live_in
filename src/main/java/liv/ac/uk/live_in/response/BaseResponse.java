@@ -8,10 +8,9 @@ public class BaseResponse <T>{
     private T data;
 
     public BaseResponse setSuccess() {
-        BaseResponse baseResponse = new BaseResponse();
-        baseResponse.setCode(ErrorCodeEnum.SUCCESS.getCode());
-        baseResponse.setDesc(ErrorCodeEnum.SUCCESS.getDesc());
-        return baseResponse;
+        this.setCode(ErrorCodeEnum.SUCCESS.getCode());
+        this.setDesc(ErrorCodeEnum.SUCCESS.getDesc());
+        return this;
     }
 
     public String getCode() {
@@ -35,7 +34,7 @@ public class BaseResponse <T>{
         return data;
     }
 
-    public BaseResponse setData(T data) {
+    public BaseResponse<T> setData(T data) {
         this.data = data;
         return this;
     }

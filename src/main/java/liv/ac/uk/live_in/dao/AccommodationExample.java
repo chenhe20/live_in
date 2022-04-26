@@ -1,9 +1,9 @@
 package liv.ac.uk.live_in.dao;
 
-import liv.ac.uk.live_in.page.Page;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import liv.ac.uk.live_in.page.Page;
 
 public class AccommodationExample {
     /**
@@ -821,6 +821,146 @@ public class AccommodationExample {
 
         public Criteria andModifiedDateNotBetween(Date value1, Date value2) {
             addCriterion("modified_date not between", value1, value2, "modifiedDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthIsNull() {
+            addCriterion("distance_to_north is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthIsNotNull() {
+            addCriterion("distance_to_north is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthEqualTo(String value) {
+            addCriterion("distance_to_north =", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthNotEqualTo(String value) {
+            addCriterion("distance_to_north <>", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthGreaterThan(String value) {
+            addCriterion("distance_to_north >", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthGreaterThanOrEqualTo(String value) {
+            addCriterion("distance_to_north >=", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthLessThan(String value) {
+            addCriterion("distance_to_north <", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthLessThanOrEqualTo(String value) {
+            addCriterion("distance_to_north <=", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthLike(String value) {
+            addCriterion("distance_to_north like", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthNotLike(String value) {
+            addCriterion("distance_to_north not like", value, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthIn(List<String> values) {
+            addCriterion("distance_to_north in", values, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthNotIn(List<String> values) {
+            addCriterion("distance_to_north not in", values, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthBetween(String value1, String value2) {
+            addCriterion("distance_to_north between", value1, value2, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToNorthNotBetween(String value1, String value2) {
+            addCriterion("distance_to_north not between", value1, value2, "distanceToNorth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthIsNull() {
+            addCriterion("distance_to_south is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthIsNotNull() {
+            addCriterion("distance_to_south is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthEqualTo(String value) {
+            addCriterion("distance_to_south =", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthNotEqualTo(String value) {
+            addCriterion("distance_to_south <>", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthGreaterThan(String value) {
+            addCriterion("distance_to_south >", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthGreaterThanOrEqualTo(String value) {
+            addCriterion("distance_to_south >=", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthLessThan(String value) {
+            addCriterion("distance_to_south <", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthLessThanOrEqualTo(String value) {
+            addCriterion("distance_to_south <=", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthLike(String value) {
+            addCriterion("distance_to_south like", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthNotLike(String value) {
+            addCriterion("distance_to_south not like", value, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthIn(List<String> values) {
+            addCriterion("distance_to_south in", values, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthNotIn(List<String> values) {
+            addCriterion("distance_to_south not in", values, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthBetween(String value1, String value2) {
+            addCriterion("distance_to_south between", value1, value2, "distanceToSouth");
+            return (Criteria) this;
+        }
+
+        public Criteria andDistanceToSouthNotBetween(String value1, String value2) {
+            addCriterion("distance_to_south not between", value1, value2, "distanceToSouth");
             return (Criteria) this;
         }
     }

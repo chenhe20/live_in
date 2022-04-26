@@ -1,5 +1,6 @@
 package liv.ac.uk.live_in.service;
 
+import com.fasterxml.jackson.databind.ser.Serializers;
 import liv.ac.uk.live_in.dao.Admin;
 import liv.ac.uk.live_in.dao.User;
 import liv.ac.uk.live_in.response.BaseResponse;
@@ -14,4 +15,6 @@ public interface LoginService {
     public BaseResponse<Admin> loginAdmin(AdminVO adminVO);
 
     public BaseResponse<User> registerUser(UserVO userVO);
+
+    public BaseResponse<User> updateUsrPwd(UserVO userVO);
 }

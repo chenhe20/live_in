@@ -18,6 +18,8 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public BaseResponse defaultExceptionHandler(HttpServletRequest request, Exception e) {
 
+        System.out.println("============" + e.getMessage());
+
         BaseResponse baseResponse = new BaseResponse();
         if (e instanceof BaseException) {
             baseResponse.setCode(((BaseException) e).getCode());

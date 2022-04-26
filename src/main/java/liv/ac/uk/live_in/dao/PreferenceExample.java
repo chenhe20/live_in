@@ -1,10 +1,10 @@
 package liv.ac.uk.live_in.dao;
 
-import liv.ac.uk.live_in.page.Page;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import liv.ac.uk.live_in.page.Page;
 
 public class PreferenceExample {
     /**
@@ -381,52 +381,52 @@ public class PreferenceExample {
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenEqualTo(Integer value) {
+        public Criteria andShareKitchenEqualTo(Boolean value) {
             addCriterion("share_kitchen =", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenNotEqualTo(Integer value) {
+        public Criteria andShareKitchenNotEqualTo(Boolean value) {
             addCriterion("share_kitchen <>", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenGreaterThan(Integer value) {
+        public Criteria andShareKitchenGreaterThan(Boolean value) {
             addCriterion("share_kitchen >", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenGreaterThanOrEqualTo(Integer value) {
+        public Criteria andShareKitchenGreaterThanOrEqualTo(Boolean value) {
             addCriterion("share_kitchen >=", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenLessThan(Integer value) {
+        public Criteria andShareKitchenLessThan(Boolean value) {
             addCriterion("share_kitchen <", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenLessThanOrEqualTo(Integer value) {
+        public Criteria andShareKitchenLessThanOrEqualTo(Boolean value) {
             addCriterion("share_kitchen <=", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenIn(List<Integer> values) {
+        public Criteria andShareKitchenIn(List<Boolean> values) {
             addCriterion("share_kitchen in", values, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenNotIn(List<Integer> values) {
+        public Criteria andShareKitchenNotIn(List<Boolean> values) {
             addCriterion("share_kitchen not in", values, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenBetween(Integer value1, Integer value2) {
+        public Criteria andShareKitchenBetween(Boolean value1, Boolean value2) {
             addCriterion("share_kitchen between", value1, value2, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenNotBetween(Integer value1, Integer value2) {
+        public Criteria andShareKitchenNotBetween(Boolean value1, Boolean value2) {
             addCriterion("share_kitchen not between", value1, value2, "shareKitchen");
             return (Criteria) this;
         }
@@ -441,52 +441,52 @@ public class PreferenceExample {
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintEqualTo(Integer value) {
+        public Criteria andSameGenderConstraintEqualTo(Boolean value) {
             addCriterion("same_gender_constraint =", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintNotEqualTo(Integer value) {
+        public Criteria andSameGenderConstraintNotEqualTo(Boolean value) {
             addCriterion("same_gender_constraint <>", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintGreaterThan(Integer value) {
+        public Criteria andSameGenderConstraintGreaterThan(Boolean value) {
             addCriterion("same_gender_constraint >", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSameGenderConstraintGreaterThanOrEqualTo(Boolean value) {
             addCriterion("same_gender_constraint >=", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintLessThan(Integer value) {
+        public Criteria andSameGenderConstraintLessThan(Boolean value) {
             addCriterion("same_gender_constraint <", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintLessThanOrEqualTo(Integer value) {
+        public Criteria andSameGenderConstraintLessThanOrEqualTo(Boolean value) {
             addCriterion("same_gender_constraint <=", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintIn(List<Integer> values) {
+        public Criteria andSameGenderConstraintIn(List<Boolean> values) {
             addCriterion("same_gender_constraint in", values, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintNotIn(List<Integer> values) {
+        public Criteria andSameGenderConstraintNotIn(List<Boolean> values) {
             addCriterion("same_gender_constraint not in", values, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintBetween(Integer value1, Integer value2) {
+        public Criteria andSameGenderConstraintBetween(Boolean value1, Boolean value2) {
             addCriterion("same_gender_constraint between", value1, value2, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintNotBetween(Integer value1, Integer value2) {
+        public Criteria andSameGenderConstraintNotBetween(Boolean value1, Boolean value2) {
             addCriterion("same_gender_constraint not between", value1, value2, "sameGenderConstraint");
             return (Criteria) this;
         }

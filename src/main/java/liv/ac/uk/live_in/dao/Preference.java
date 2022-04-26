@@ -3,7 +3,7 @@ package liv.ac.uk.live_in.dao;
 import java.util.Date;
 
 /**
- * preference dao object
+ * preferencedao object
  * 
  **/
 public class Preference {
@@ -14,10 +14,10 @@ public class Preference {
     private Date sleepingTime;
 
     /** Willing to share the kitchen is 1, otherwise 0 */
-    private Integer shareKitchen;
+    private Boolean shareKitchen;
 
     /** Roommate same gender constraint 1, otherwise 0 */
-    private Integer sameGenderConstraint;
+    private Boolean sameGenderConstraint;
 
     /**  */
     private Date createdDate;
@@ -87,7 +87,7 @@ public class Preference {
      *
      * @mbggenerated
      */
-    public Integer getShareKitchen() {
+    public Boolean getShareKitchen() {
         return shareKitchen;
     }
 
@@ -99,7 +99,7 @@ public class Preference {
      *
      * @mbggenerated
      */
-    public void setShareKitchen(Integer shareKitchen) {
+    public void setShareKitchen(Boolean shareKitchen) {
         this.shareKitchen = shareKitchen;
     }
 
@@ -111,7 +111,7 @@ public class Preference {
      *
      * @mbggenerated
      */
-    public Integer getSameGenderConstraint() {
+    public Boolean getSameGenderConstraint() {
         return sameGenderConstraint;
     }
 
@@ -123,7 +123,7 @@ public class Preference {
      *
      * @mbggenerated
      */
-    public void setSameGenderConstraint(Integer sameGenderConstraint) {
+    public void setSameGenderConstraint(Boolean sameGenderConstraint) {
         this.sameGenderConstraint = sameGenderConstraint;
     }
 
