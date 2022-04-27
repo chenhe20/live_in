@@ -8,10 +8,7 @@ import liv.ac.uk.live_in.vo.AdminVO;
 public interface AdminService {
 
     public BaseResponse<Admin> updateAdminPwd(AdminVO adminVO);
-
     public BaseResponse<Admin> deleteAdmin(AdminVO adminVO);
-
     public BaseResponse<Admin> queryAdmin(AdminVO adminVO);
-
     public BaseResponse<Admin> addAdmin(AdminVO adminVO);
 }

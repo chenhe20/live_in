@@ -38,6 +38,7 @@ public class Preference {
      * This method returns the value of the database column preference.id
      *
      * @return the value of preference.id
+     *
      * @mbggenerated
      */
     public Integer getId() {
@@ -49,6 +50,7 @@ public class Preference {
      * This method sets the value of the database column preference.id
      *
      * @param id the value for preference.id
+     *
      * @mbggenerated
      */
     public void setId(Integer id) {

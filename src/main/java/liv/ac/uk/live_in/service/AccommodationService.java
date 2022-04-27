@@ -14,7 +14,6 @@ public interface AccommodationService {
 
     public BaseResponse<List<Accommodation>> queryAllAccommodation();
     public BaseResponse<List<Accommodation>> queryAccommodationByKeyWord(String keyword);
-
     public BaseResponse<Accommodation> queryAccommodationByAcmdName(String acmdName);
 
 }

@@ -12,9 +12,7 @@ public class Room {
      */
     private Integer id;
 
-    /**
-     *
-     */
+    /**  */
     private Integer acmdId;
 
     /**  */
@@ -23,9 +21,7 @@ public class Room {
     /**  */
     private String roomType;
 
-    /**
-     * Rent per week
-     */
+    /** Rent per week */
     private Integer rent;
 
     /**  */
@@ -54,6 +50,7 @@ public class Room {
      * This method returns the value of the database column room.id
      *
      * @return the value of room.id
+     *
      * @mbggenerated
      */
     public Integer getId() {
@@ -65,6 +62,7 @@ public class Room {
      * This method sets the value of the database column room.id
      *
      * @param id the value for room.id
+     *
      * @mbggenerated
      */
     public void setId(Integer id) {
@@ -76,6 +74,7 @@ public class Room {
      * This method returns the value of the database column room.acmd_id
      *
      * @return the value of room.acmd_id
+     *
      * @mbggenerated
      */
     public Integer getAcmdId() {
@@ -87,6 +86,7 @@ public class Room {
      * This method sets the value of the database column room.acmd_id
      *
      * @param acmdId the value for room.acmd_id
+     *
      * @mbggenerated
      */
     public void setAcmdId(Integer acmdId) {

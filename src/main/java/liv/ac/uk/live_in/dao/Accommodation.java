@@ -12,39 +12,25 @@ public class Accommodation {
      */
     private Integer id;
 
-    /**
-     * Accommodation name
-     */
+    /** Accommodation name */
     private String acmdName;
 
-    /**
-     * Geography longitude
-     */
+    /** Geography longitude */
     private String longitude;
 
-    /**
-     * Geography Latitude
-     */
+    /** Geography Latitude */
     private String latitude;
 
-    /**
-     * Nearby facility map url list
-     */
+    /** Nearby facility map url list */
     private String facilities;
 
-    /**
-     * Official website link
-     */
+    /** Official website link */
     private String webUrl;
 
-    /**
-     *
-     */
+    /**  */
     private String picUrl;
 
-    /**
-     * flat amenities list
-     */
+    /** flat amenities list */
     private String amenities;
 
     /**  */
@@ -68,9 +54,7 @@ public class Accommodation {
     /**  */
     private Double distanceToCampus;
 
-    /**
-     *
-     */
+    /**  */
     private Boolean deleteStatus;
 
     /**
@@ -162,6 +146,7 @@ public class Accommodation {
      * This method sets the value of the database column accommodation.latitude
      *
      * @param latitude the value for accommodation.latitude
+     *
      * @mbggenerated
      */
     public void setLatitude(String latitude) {
@@ -173,6 +158,7 @@ public class Accommodation {
      * This method returns the value of the database column accommodation.facilities
      *
      * @return the value of accommodation.facilities
+     *
      * @mbggenerated
      */
     public String getFacilities() {
@@ -184,6 +170,7 @@ public class Accommodation {
      * This method sets the value of the database column accommodation.facilities
      *
      * @param facilities the value for accommodation.facilities
+     *
      * @mbggenerated
      */
     public void setFacilities(String facilities) {

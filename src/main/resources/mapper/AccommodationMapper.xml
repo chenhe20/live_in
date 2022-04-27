@@ -449,4 +449,11 @@
       LIMIT #{page.dbBeginIndex}, #{page.itemsPerPage}
     </if>
   </sql>
+
+  <select id="customSelectByKeyword" parameterType="string" resultType="liv.ac.uk.live_in.dao.Accommodation">
+    SELECT *
+    FROM accommodation
+    WHERE delete_status = 0
+      and CONCAT(acmd_name, postcode, amenities) like CONCAT('%', #{keyword}, '%')
+  </select>
 </mapper>

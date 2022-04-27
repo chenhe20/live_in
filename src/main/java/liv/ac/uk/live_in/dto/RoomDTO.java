@@ -10,83 +10,51 @@ public class RoomDTO {
      */
     private Integer id;
 
-    /**
-     * Accommodation ID
-     */
+    /** Accommodation ID */
     private String acmdId;
 
-    /**
-     * Accommodation name
-     */
+    /** Accommodation name */
     private String acmdName;
 
-    /**
-     * Room Type: en-suite or studio
-     */
+    /** Room Type: en-suite or studio */
     private String roomType;
 
-    /**
-     * Rent per week
-     */
+    /** Rent per week */
     private Integer rent;
 
-    /**
-     * tenancy length list, values are divided by string space
-     */
+    /** tenancy length list, values are divided by string space */
     private String tenancy;
 
-    /**
-     * room url
-     */
+    /** room url */
     private String infoUrl;
 
-    /**
-     * Tenancy terms
-     */
+    /** Tenancy terms */
     private String term;
 
-    /**
-     * accommodation url
-     */
+    /** accommodation url */
     private String webUrl;
 
-    /**
-     * accommodation url
-     */
+    /** accommodation url  */
     private String picUrl;
 
-    /**
-     * flat amenities list
-     */
+    /** flat amenities list */
     private String amenities;
 
-    /**
-     * Distance to north campus
-     */
+    /** Distance to north campus */
     private String distanceToNorth;
 
-    /**
-     * Distance to south campus
-     */
+    /** Distance to south campus */
     private String distanceToSouth;
 
-    /**
-     * Average rating
-     */
+    /** Average rating */
     private Double ratings;
 
-    /**
-     *
-     */
+    /**  */
     private String postcode;
 
-    /**
-     *
-     */
+    /**  */
     private Double distanceToCampus;
 
-    /**
-     * Nearby facility map url list
-     */
+    /** Nearby facility map url list */
     private String facilities;
 }
