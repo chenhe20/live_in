@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AdminServiceImpl implements AdminService {
     @Override
-    public BaseResponse<Admin> updateAdminPwd(AdminVO adminVO) {
+    public BaseResponse<Admin> updateAdmin(AdminVO adminVO) {
         return null;
     }
 

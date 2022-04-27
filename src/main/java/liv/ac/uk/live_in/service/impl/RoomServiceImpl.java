@@ -157,7 +157,7 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
-    public BaseResponse<Room> deleteRoom(RoomVO roomVO) {
+    public BaseResponse<Room> deleteRoom(Integer id) {
         return null;
     }
 

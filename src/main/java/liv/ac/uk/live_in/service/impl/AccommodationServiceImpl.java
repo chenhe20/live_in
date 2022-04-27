@@ -46,6 +46,11 @@ public class AccommodationServiceImpl implements AccommodationService {
     }
 
     @Override
+    public BaseResponse<Accommodation> addAccommodation(AccommodationVO acmdVO) {
+        return null;
+    }
+
+    @Override
     public BaseResponse<List<Accommodation>> queryAccommodation(AccommodationVO acmdVO) {
         return null;
     }

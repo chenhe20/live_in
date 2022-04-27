@@ -46,5 +46,11 @@ public class AccommodationController {
         return accommodationService.queryAccommodationByAcmdName(name);
     }
 
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse addAcmd(@RequestBody AccommodationVO acmdVO) {
+        return accommodationService.addAccommodation(acmdVO);
+    }
+
 
 }

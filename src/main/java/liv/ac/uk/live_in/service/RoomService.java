@@ -17,7 +17,7 @@ public interface RoomService {
 
     public BaseResponse<Room> updateRoom(RoomVO roomVO);
 
-    public BaseResponse<Room> deleteRoom(RoomVO roomVO);
+    public BaseResponse<Room> deleteRoom(Integer id);
 
 
 }

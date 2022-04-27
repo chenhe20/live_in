@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService {
     public BaseResponse<User> queryUser(UserVO userVO) {
         return null;
     }
+
+    @Override
+    public BaseResponse<User> addUser(UserVO userVO) {
+        return null;
+    }
 }

@@ -10,8 +10,10 @@ public interface AccommodationService {
 
     public BaseResponse<Accommodation> updateAccommodation(AccommodationVO acmdVO);
     public BaseResponse<Accommodation> deleteAccommodation(AccommodationVO acmdVO);
-    public BaseResponse<List<Accommodation>> queryAccommodation(AccommodationVO acmdVO);
 
+    public BaseResponse<Accommodation> addAccommodation(AccommodationVO acmdVO);
+
+    public BaseResponse<List<Accommodation>> queryAccommodation(AccommodationVO acmdVO);
     public BaseResponse<List<Accommodation>> queryAllAccommodation();
     public BaseResponse<List<Accommodation>> queryAccommodationByKeyWord(String keyword);
     public BaseResponse<Accommodation> queryAccommodationByAcmdName(String acmdName);

@@ -34,4 +34,17 @@ public class RoomController {
         return roomService.queryRoom(roomVO);
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse deleteRoom(@PathVariable Integer id) {
+        return roomService.deleteRoom(id);
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse updateRoom(@RequestBody RoomVO roomVO) {
+        return roomService.updateRoom(roomVO);
+    }
+
+
 }
