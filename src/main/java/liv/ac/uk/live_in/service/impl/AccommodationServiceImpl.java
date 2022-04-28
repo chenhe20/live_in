@@ -22,7 +22,8 @@ public class AccommodationServiceImpl implements AccommodationService {
 
     @Override
     public BaseResponse<Accommodation> updateAccommodation(AccommodationVO acmdVO) {
-        if (acmdVO == null || acmdVO.getAcmdName() == null) throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+        if (acmdVO == null || acmdVO.getAcmdName() == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
 
         AccommodationExample accommodationExample = new AccommodationExample();
         AccommodationExample.Criteria criteria = accommodationExample.createCriteria();
@@ -30,11 +31,19 @@ public class AccommodationServiceImpl implements AccommodationService {
         criteria.andAcmdNameEqualTo(acmdVO.getAcmdName());
         List<Accommodation> accommodations = accommodationMapper.selectByExample(accommodationExample);
 
-        if (accommodations.size() == 0) throw new BaseException(ErrorCodeEnum.INVALID_REQUEST).setDesc("No match accommodation");
+        if (accommodations.size() == 0)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST).setDesc("No match accommodation");
 
-        Accommodation accommodation = accommodations.get(0);
+        // Logically deletes
+        Accommodation oldAccommodation = accommodations.get(0);
+        oldAccommodation.setModifiedDate(null);
+        oldAccommodation.setDeleteStatus(true);
+        accommodationMapper.updateByPrimaryKeySelective(oldAccommodation);
+
+        // Inserts new
+        Accommodation accommodation = new Accommodation();
         BeanUtils.copyProperties(acmdVO, accommodation);
-        accommodation.setModifiedDate(null);
+        accommodation.setCreatedDate(oldAccommodation.getCreatedDate());
         accommodationMapper.insertSelective(accommodation);
         return new BaseResponse().setData(accommodation).setSuccess();
 
@@ -47,7 +56,27 @@ public class AccommodationServiceImpl implements AccommodationService {
 
     @Override
     public BaseResponse<Accommodation> addAccommodation(AccommodationVO acmdVO) {
-        return null;
+        if (acmdVO.getAcmdName() == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+
+        if (acmdVO.getPostcode() == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST).setDesc("Postcode cannot be null");
+
+        // Validates uniqueness
+        AccommodationExample accommodationExample = new AccommodationExample();
+        AccommodationExample.Criteria criteria = accommodationExample.createCriteria();
+        criteria.andAcmdNameEqualTo(acmdVO.getAcmdName());
+        criteria.andDeleteStatusEqualTo(false);
+
+        List<Accommodation> accommodations = accommodationMapper.selectByExample(accommodationExample);
+        if (accommodations.size() != 0)
+            throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Duplicated accommodation name");
+
+        // Inserts
+        Accommodation accommodation = new Accommodation();
+        BeanUtils.copyProperties(acmdVO, accommodation);
+        accommodationMapper.insertSelective(accommodation);
+        return new BaseResponse<>().setData(accommodation).setSuccess();
     }
 
     @Override

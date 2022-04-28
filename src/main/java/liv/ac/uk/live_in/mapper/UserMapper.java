@@ -1,10 +1,11 @@
 package liv.ac.uk.live_in.mapper;
 
-import java.util.List;
 import liv.ac.uk.live_in.dao.User;
 import liv.ac.uk.live_in.dao.UserExample;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -79,4 +80,6 @@ public interface UserMapper {
      * @mbggenerated
      */
     int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(@Param("record") User record);
 }

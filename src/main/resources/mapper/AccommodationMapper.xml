@@ -361,7 +361,7 @@
     ratings = #{record.ratings,jdbcType=DOUBLE},
     postcode = #{record.postcode,jdbcType=VARCHAR},
     distance_to_campus = #{record.distanceToCampus,jdbcType=DOUBLE},
-      delete_status = #{record.deleteStatus,jdbcType=INTEGER}
+    delete_status = #{record.deleteStatus,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

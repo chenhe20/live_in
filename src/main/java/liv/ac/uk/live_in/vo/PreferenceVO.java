@@ -7,10 +7,6 @@ import java.util.Date;
 
 @Data
 public class PreferenceVO {
-    /**
-     *
-     */
-    private Integer id;
 
     /**
      *

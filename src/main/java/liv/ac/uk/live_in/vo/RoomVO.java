@@ -6,6 +6,8 @@ import lombok.Data;
 @Data
 public class RoomVO {
 
+    private Integer Id;
+
     /**
      *
      */

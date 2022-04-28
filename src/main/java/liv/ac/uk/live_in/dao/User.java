@@ -3,8 +3,7 @@ package liv.ac.uk.live_in.dao;
 import java.util.Date;
 
 /**
- * userdao object
- * 
+ * user dao object
  **/
 public class User {
     /**  */

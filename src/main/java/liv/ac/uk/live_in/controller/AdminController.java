@@ -15,6 +15,12 @@ public class AdminController {
     @Autowired
     AdminServiceImpl AdminService;
 
+    @RequestMapping(value = "/update-pwd", method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse updateAdminPwd(@RequestBody AdminVO adminVO) {
+        return AdminService.updateAdminPwd(adminVO);
+    }
+
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
     public BaseResponse updateAdmin(@RequestBody AdminVO adminVO) {

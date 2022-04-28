@@ -382,52 +382,52 @@ public class PreferenceExample {
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenEqualTo(Boolean value) {
+        public Criteria andShareKitchenEqualTo(Integer value) {
             addCriterion("share_kitchen =", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenNotEqualTo(Boolean value) {
+        public Criteria andShareKitchenNotEqualTo(Integer value) {
             addCriterion("share_kitchen <>", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenGreaterThan(Boolean value) {
+        public Criteria andShareKitchenGreaterThan(Integer value) {
             addCriterion("share_kitchen >", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andShareKitchenGreaterThanOrEqualTo(Integer value) {
             addCriterion("share_kitchen >=", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenLessThan(Boolean value) {
+        public Criteria andShareKitchenLessThan(Integer value) {
             addCriterion("share_kitchen <", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenLessThanOrEqualTo(Boolean value) {
+        public Criteria andShareKitchenLessThanOrEqualTo(Integer value) {
             addCriterion("share_kitchen <=", value, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenIn(List<Boolean> values) {
+        public Criteria andShareKitchenIn(List<Integer> values) {
             addCriterion("share_kitchen in", values, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenNotIn(List<Boolean> values) {
+        public Criteria andShareKitchenNotIn(List<Integer> values) {
             addCriterion("share_kitchen not in", values, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenBetween(Boolean value1, Boolean value2) {
+        public Criteria andShareKitchenBetween(Integer value1, Integer value2) {
             addCriterion("share_kitchen between", value1, value2, "shareKitchen");
             return (Criteria) this;
         }
 
-        public Criteria andShareKitchenNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andShareKitchenNotBetween(Integer value1, Integer value2) {
             addCriterion("share_kitchen not between", value1, value2, "shareKitchen");
             return (Criteria) this;
         }
@@ -442,52 +442,52 @@ public class PreferenceExample {
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintEqualTo(Boolean value) {
+        public Criteria andSameGenderConstraintEqualTo(Integer value) {
             addCriterion("same_gender_constraint =", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintNotEqualTo(Boolean value) {
+        public Criteria andSameGenderConstraintNotEqualTo(Integer value) {
             addCriterion("same_gender_constraint <>", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintGreaterThan(Boolean value) {
+        public Criteria andSameGenderConstraintGreaterThan(Integer value) {
             addCriterion("same_gender_constraint >", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andSameGenderConstraintGreaterThanOrEqualTo(Integer value) {
             addCriterion("same_gender_constraint >=", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintLessThan(Boolean value) {
+        public Criteria andSameGenderConstraintLessThan(Integer value) {
             addCriterion("same_gender_constraint <", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintLessThanOrEqualTo(Boolean value) {
+        public Criteria andSameGenderConstraintLessThanOrEqualTo(Integer value) {
             addCriterion("same_gender_constraint <=", value, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintIn(List<Boolean> values) {
+        public Criteria andSameGenderConstraintIn(List<Integer> values) {
             addCriterion("same_gender_constraint in", values, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintNotIn(List<Boolean> values) {
+        public Criteria andSameGenderConstraintNotIn(List<Integer> values) {
             addCriterion("same_gender_constraint not in", values, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintBetween(Boolean value1, Boolean value2) {
+        public Criteria andSameGenderConstraintBetween(Integer value1, Integer value2) {
             addCriterion("same_gender_constraint between", value1, value2, "sameGenderConstraint");
             return (Criteria) this;
         }
 
-        public Criteria andSameGenderConstraintNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andSameGenderConstraintNotBetween(Integer value1, Integer value2) {
             addCriterion("same_gender_constraint not between", value1, value2, "sameGenderConstraint");
             return (Criteria) this;
         }
@@ -669,6 +669,76 @@ public class PreferenceExample {
 
         public Criteria andDeleteStatusNotBetween(Boolean value1, Boolean value2) {
             addCriterion("delete_status not between", value1, value2, "deleteStatus");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameIsNull() {
+            addCriterion("username is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameIsNotNull() {
+            addCriterion("username is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameEqualTo(String value) {
+            addCriterion("username =", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameNotEqualTo(String value) {
+            addCriterion("username <>", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameGreaterThan(String value) {
+            addCriterion("username >", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameGreaterThanOrEqualTo(String value) {
+            addCriterion("username >=", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameLessThan(String value) {
+            addCriterion("username <", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameLessThanOrEqualTo(String value) {
+            addCriterion("username <=", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameLike(String value) {
+            addCriterion("username like", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameNotLike(String value) {
+            addCriterion("username not like", value, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameIn(List<String> values) {
+            addCriterion("username in", values, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameNotIn(List<String> values) {
+            addCriterion("username not in", values, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameBetween(String value1, String value2) {
+            addCriterion("username between", value1, value2, "username");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsernameNotBetween(String value1, String value2) {
+            addCriterion("username not between", value1, value2, "username");
             return (Criteria) this;
         }
     }

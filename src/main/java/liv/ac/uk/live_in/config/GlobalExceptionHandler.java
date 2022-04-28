@@ -16,7 +16,6 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public BaseResponse defaultExceptionHandler(HttpServletRequest request, Exception e) {
 
-        System.out.println("======Exception======");
         e.printStackTrace();
 
         BaseResponse baseResponse = new BaseResponse();

@@ -153,12 +153,52 @@ public class RoomServiceImpl implements RoomService {
 
     @Override
     public BaseResponse<Room> updateRoom(RoomVO roomVO) {
-        return null;
+        if (roomVO.getId() == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+
+        // Searches old room
+        RoomExample roomExample = new RoomExample();
+        RoomExample.Criteria criteria = roomExample.createCriteria();
+        criteria.andDeleteStatusEqualTo(false);
+        criteria.andIdEqualTo(roomVO.getId());
+
+        List<Room> rooms = roomMapper.selectByExample(roomExample);
+        if (rooms.size() == 0)
+            throw new BaseException(ErrorCodeEnum.NO_DATA);
+
+        // Logically deletes
+        Room oldRoom = rooms.get(0);
+        oldRoom.setDeleteStatus(true);
+        roomMapper.updateByPrimaryKeySelective(oldRoom);
+
+        // Inserts
+        Room room = new Room();
+        BeanUtils.copyProperties(roomVO, room);
+        room.setCreatedDate(oldRoom.getCreatedDate());
+        roomMapper.insertSelective(room);
+        return new BaseResponse<>().setData(room).setSuccess();
     }
 
     @Override
     public BaseResponse<Room> deleteRoom(Integer id) {
-        return null;
+        if (id == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+
+        // Searches old room
+        RoomExample roomExample = new RoomExample();
+        RoomExample.Criteria criteria = roomExample.createCriteria();
+        criteria.andDeleteStatusEqualTo(false);
+        criteria.andIdEqualTo(id);
+
+        List<Room> rooms = roomMapper.selectByExample(roomExample);
+        if (rooms.size() == 0)
+            throw new BaseException(ErrorCodeEnum.NO_DATA);
+
+        // Logically deletes
+        Room oldRoom = rooms.get(0);
+        oldRoom.setDeleteStatus(true);
+        roomMapper.updateByPrimaryKeySelective(oldRoom);
+        return new BaseResponse<>().setData(oldRoom).setSuccess();
     }
 
 

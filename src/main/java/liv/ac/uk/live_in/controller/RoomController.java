@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/live-in/room")
 @CrossOrigin
 public class RoomController {
-
     @Autowired
     RoomServiceImpl roomService;
 

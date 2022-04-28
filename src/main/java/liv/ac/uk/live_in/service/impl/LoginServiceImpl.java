@@ -3,9 +3,11 @@ package liv.ac.uk.live_in.service.impl;
 
 import liv.ac.uk.live_in.Enum.ErrorCodeEnum;
 import liv.ac.uk.live_in.dao.Admin;
+import liv.ac.uk.live_in.dao.AdminExample;
 import liv.ac.uk.live_in.dao.User;
 import liv.ac.uk.live_in.dao.UserExample;
 import liv.ac.uk.live_in.exception.BaseException;
+import liv.ac.uk.live_in.mapper.AdminMapper;
 import liv.ac.uk.live_in.mapper.UserMapper;
 import liv.ac.uk.live_in.response.BaseResponse;
 import liv.ac.uk.live_in.service.LoginService;
@@ -24,6 +26,9 @@ public class LoginServiceImpl implements LoginService {
 
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    AdminMapper adminMapper;
 
     @Override
     public BaseResponse<User> loginUser(UserVO userVO) {
@@ -60,24 +65,21 @@ public class LoginServiceImpl implements LoginService {
         // Validates request
         if (username == null || password == null) throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
 
-        UserExample userExample = new UserExample();
-        UserExample.Criteria criteria = userExample.createCriteria();
+        AdminExample adminExample = new AdminExample();
+        AdminExample.Criteria criteria = adminExample.createCriteria();
         criteria.andUsernameEqualTo(username);
         criteria.andDeleteStatusEqualTo(false);
-        List<User> users = userMapper.selectByExample(userExample);
+        List<Admin> admins = adminMapper.selectByExample(adminExample);
 
         // If there is no such username in the database
-        if (users == null) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
+        if (admins.size() == 0) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
 
         // Compares passwords
-        User dbUser = users.get(0);
-        if (PwdEncryptionUtil.ReMd5PwdToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
-            baseResponse.setSuccess();
-            baseResponse.setData(dbUser);
+        Admin admin = admins.get(0);
+        if (PwdEncryptionUtil.ReMd5PwdToDB(password, admin.getSalt()).equals(admin.getPassword())) {
+            return new BaseResponse().setData(admin).setSuccess();
 
         } else throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
-
-        return baseResponse;
     }
 
     @Override
@@ -110,9 +112,7 @@ public class LoginServiceImpl implements LoginService {
         user.setPassword(password);
         userMapper.insertSelective(user);
 
-        BaseResponse baseResponse = new BaseResponse();
-        baseResponse.setData(user);
-        return baseResponse.setSuccess();
+        return new BaseResponse().setData(user).setSuccess();
     }
 
     @Override

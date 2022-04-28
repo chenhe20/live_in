@@ -358,16 +358,59 @@
       salt = #{record.salt,jdbcType=VARCHAR},
       DoB = #{record.dob,jdbcType=TIMESTAMP},
       institution = #{record.institution,jdbcType=VARCHAR},
-      gender = #{record.gender,jdbcType=VARCHAR},
-      nationality = #{record.nationality,jdbcType=VARCHAR},
-      created_date = #{record.createdDate,jdbcType=TIMESTAMP},
-      modified_date = #{record.modifiedDate,jdbcType=TIMESTAMP},
-      delete_status = #{record.deleteStatus,jdbcType=INTEGER},
-      email = #{record.email,jdbcType=VARCHAR}
+    gender = #{record.gender,jdbcType=VARCHAR},
+    nationality = #{record.nationality,jdbcType=VARCHAR},
+    created_date = #{record.createdDate,jdbcType=TIMESTAMP},
+    modified_date = #{record.modifiedDate,jdbcType=TIMESTAMP},
+    delete_status = #{record.deleteStatus,jdbcType=INTEGER},
+    email = #{record.email,jdbcType=VARCHAR}
     <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
+      <include refid="Update_By_Example_Where_Clause"/>
     </if>
   </update>
+  <update id="updateByPrimaryKeySelective" parameterType="liv.ac.uk.live_in.dao.User">
+    update user
+    <set>
+      <if test="record.username != null">
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null">
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salt != null">
+        salt = #{record.salt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dob != null">
+        DoB = #{record.dob,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.institution != null">
+        institution = #{record.institution,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nationality != null">
+        nationality = #{record.nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdDate != null">
+        created_date = #{record.createdDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifiedDate != null">
+        modified_date = #{record.modifiedDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.deleteStatus != null">
+        delete_status = #{record.deleteStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bio != null">
+        bio = #{record.bio,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{record.id,jdbcType=INTEGER}
+  </update>
+
   <sql id="MySQLDialectSuffix">
     <if test="page != null">
       LIMIT #{page.dbBeginIndex}, #{page.itemsPerPage}
