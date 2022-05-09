@@ -3,13 +3,10 @@ package liv.ac.uk.live_in.dao;
 import java.util.Date;
 
 /**
- * accommodationdao object
- * 
+ * accommodation dao object
  **/
 public class Accommodation {
-    /**
-     *
-     */
+    /**  */
     private Integer id;
 
     /** Accommodation name */

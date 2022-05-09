@@ -37,7 +37,8 @@ public class LoginServiceImpl implements LoginService {
         String password = userVO.getPassword();
 
         // Validates request
-        if (username == null || password == null) throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+        if (username == null || password == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
 
         UserExample userExample = new UserExample();
         UserExample.Criteria criteria = userExample.createCriteria();
@@ -46,13 +47,15 @@ public class LoginServiceImpl implements LoginService {
         List<User> users = userMapper.selectByExample(userExample);
 
         // If there is no such username in the database
-        if (users.size() == 0) throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
+        if (users.size() == 0)
+            throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
 
         // Compares passwords
         User dbUser = users.get(0);
-        if (PwdEncryptionUtil.ReMd5PwdToDB(password,dbUser.getSalt()).equals(dbUser.getPassword())) {
+        if (PwdEncryptionUtil.ReMd5PwdToDB(password, dbUser.getSalt()).equals(dbUser.getPassword()))
             return new BaseResponse<User>().setData(dbUser).setSuccess();
-        } else throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
+        else
+            throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
     }
 
     @Override
@@ -117,6 +120,54 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public BaseResponse<User> updateUserPwd(UserVO userVO) {
-        return null;
+        String username = userVO.getUsername();
+        String password = userVO.getPassword();
+
+        // Validates request
+        if (username == null || password == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST);
+
+        // Compares the new password with the old one
+        String newPassword = userVO.getNewPassword();
+        if (newPassword == null)
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST).setDesc("New password cannot be null");
+
+        if (newPassword.equals(password))
+            throw new BaseException(ErrorCodeEnum.INVALID_REQUEST).setDesc("New password cannot be same with the old password");
+
+        UserExample userExample = new UserExample();
+        UserExample.Criteria criteria = userExample.createCriteria();
+        criteria.andUsernameEqualTo(username);
+        criteria.andDeleteStatusEqualTo(false);
+        List<User> users = userMapper.selectByExample(userExample);
+
+        // If there is no such username in the database
+        if (users.size() == 0)
+            throw new BaseException(ErrorCodeEnum.FAIL).setDesc("No match username");
+
+        // Compares passwords
+        User dbUser = users.get(0);
+        if (!PwdEncryptionUtil.ReMd5PwdToDB(password, dbUser.getSalt()).equals(dbUser.getPassword()))
+            throw new BaseException(ErrorCodeEnum.FAIL).setDesc("Password is incorrect");
+
+        // Encrypts the password
+        String uuid = UUID.randomUUID().toString();
+        String passwordToDb = PwdEncryptionUtil.ReMd5PwdToDB(password, uuid);
+
+        dbUser.setDeleteStatus(true);
+        dbUser.setModifiedDate(null);
+        userMapper.updateByPrimaryKeySelective(dbUser);
+
+        User user = new User();
+        BeanUtils.copyProperties(dbUser, user);
+        user.setDeleteStatus(false);
+        user.setCreatedDate(dbUser.getCreatedDate());
+        user.setSalt(uuid);
+        user.setPassword(passwordToDb);
+        user.setId(null);
+        userMapper.insertSelective(user);
+
+        return new BaseResponse<>().setSuccess().setData(user);
+
     }
 }

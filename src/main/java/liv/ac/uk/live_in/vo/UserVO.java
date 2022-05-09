@@ -26,13 +26,24 @@ public class UserVO {
     /**  */
     private String gender;
 
-    /**  */
+    /**
+     *
+     */
     private String nationality;
 
-    /** Email address */
+    /**
+     * Email address
+     */
     private String email;
 
-    /** Short biography */
+    /**
+     * Short biography
+     */
     private String bio;
+
+    /**
+     * new password for password update
+     */
+    private String newPassword;
 
 }
